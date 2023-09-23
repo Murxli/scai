@@ -7,14 +7,14 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,4 +24,89 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+.navbar-container{
+  width: 100%;
+  height: fit-content;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 20;
+
+
+}
+
+.navbar{
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* font-weight: 600; */
+    font-size: 1.2rem;
+    padding: 1rem;
+    max-width: 1064px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+
+.logo{
+    font-size: 1rem;
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 50%;
+}
+
+.nav-items a{
+    color: black;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #646cff;
+}
+
+nav.stroke ul li a{
+  position: relative;
+}
+
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+button a{
+    padding: 0 0.7rem 0.2rem 0.7rem;
+    color: white;
+}
+
+p{
+  margin: 0;
+}
+
+.clicked a{
+  color: #646cff;
 }
